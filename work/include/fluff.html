@@ -1,0 +1,38 @@
+
+   <div id="fluff">
+    <form id="gears" action="" method="post">
+     <select name="gear" id="selector" onchange="fluff()">
+<?php
+foreach ($gears as $option) {
+if ($gear == $option) { // Select gear picked by user
+echo "      <option value=\"$option\" selected>$option</option>\n";
+} else {
+echo "      <option value=\"$option\">$option</option>\n";
+}
+}
+?>
+    </select>
+   </form>
+<?php
+// I have to make this modular
+$Gear = array("id" => "[INVALID DATA]", "class" => "[INVALID DATA]", "company" => "[INVALID DATA]", "fluff" => "Rebooting ONNet");
+$Hunter = array("id" => "HACS-01MG-MP", "class" => "General Purpose Trooper Gear", "company" => "Northco", "fluff" => "The Hunter is the mainstay of most Northern forces due to its low production cost and modularity. It was the first dedicated Gear design produced on Terra Nova and subsequent designs have been based on it.  It’s continuously upgraded to meet the needs of the modern battlefields of the 62nd century and is expected to serve for years to come.");
+$Jaeger = array("id" => "OACS-01M/SU", "class" => "General Purpose Trooper Gear", "company" => "Territorial Arms", "fluff" => "The Jaeger is the standard trooper Gear of the Allied Southern Territories. Although its rounded composite Southern armor creates a distinct appearance, the internals are nearly identical to the Northern Hunter as a result of being based on a prototype captured by the Southern Republic.");
+$Warrior = array("id" => "PA-01", "class" => "General Purpose Trooper Gear", "company" => "Paxton Arms", "fluff" => "The Warrior is Paxton Arms’ entry into the military Gear market.  Although it has not been adopted into polar forces to the extent Paxton hoped for, it has found a home in hearts of Badland militias and pro-duelists alike.");
+$Cheetah = array("id" => "HACS-01LG-SCT", "class" => "Recon/EW Gear", "company" => "Shaian Mechanics", "fluff" => "The Cheetah is the North’s dedicated recon and EW Gear.  Its blinding speed and maneuverability allow it to dodge incoming fire, all the while relaying firing coordinates to its allies.  It can also sow confusion and disorder in enemy comms and sensors.  In the Arena, pilots have found a number of unconventional uses for the Cheetah’s abilities.");
+$Iguana = array("id" => "OACS-01L/SC", "class" => "Recon Gear", "company" => "Territorial Arms", "fluff" => "After problems with failed scout designs like the Anolis, Territorial Arms was commissioned to design a new purpose-built dedicated scout Gear. The end result of this commission was the Iguana, which not only fit the role of a scout Gear but can also fill the role of a light Trooper Gear in a pinch. Called the \"Iggy\", the Iguana is the favorite of daredevil pilots in the Arena.");
+$Sidewinder = array("id" => "OACS-04M/SU", "class" => "Heavy Trooper Gear", "company" => "Dynamic Systems", "fluff" => "A product of the South’s Vehicle Modernization Program, the Sidewinder marked a shift in design focus in the South towards multi purpose machines with dedicated Southern design. Despite ongoing legal controversy between Dynamic System and Territorial Arms, the Sidewinder remains incredibly popular for its performance and its pilot safety features.");
+$Tiger = array("id" => "HACS-08MG-MP", "class" => "Heavy Trooper Gear", "company" => "Territorial Arms", "fluff" => "The Tiger originated from the United Mercantile Federation out of a necessity to replace the Hunter Mk 1 design. Sporting advanced fire control system and surprising maneuverability for its size. Due to the arrival of the Jaguar, it was never fully deployed. Tigers are still favored by the UMF, Arena pilots and Mercenary units.");
+$BlackMamba = array("id" => "OACS-05M/SU", "class" => "Strike Gear", "company" => "Territorial Arms", "fluff" => "The AST began deploying the Black Mamba just before the War of the Alliance, where it was used to great effect. With a combination of advanced sensors, high mobility, and heavy weapons and armor it has cemented itself as a favorite for Commando teams and the South's most notorious pilots.");
+$Jaguar = array("id" => "HACS-02MG-MPS", "class" => "Strike Gear", "company" => "Northco", "fluff" => "The Jaguar is the North’s premier strike Gear. It is an advanced Gear that is slowly phasing out older designs. Combining precision firepower, decent armor and speed into a deadly package, the Jaguar is at home in the North’s elite regiments and on the Pro Arena circuits.");
+
+echo "   Designation: ";
+echo ${$gear}['id']; echo "<br>", PHP_EOL;
+echo "   Classification: ";
+echo ${$gear}['class']; echo "<br>", PHP_EOL;
+echo "   Manufactured by: ";
+echo ${$gear}['company']; echo "<br>", PHP_EOL;
+echo "   <p>"; echo ${$gear}['fluff']; echo "</p>", PHP_EOL;
+echo "   <img src=\"/img/$gear.png\" id=\"gear\">", PHP_EOL;
+?>
+   </div>
